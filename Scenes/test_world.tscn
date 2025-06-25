@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://ddke4q1f5vtwk" path="res://Scripts/Player/movement.gd" id="2_707cn"]
 [ext_resource type="Texture2D" uid="uid://kwi1fodv1dd7" path="res://Assets/Characters_Images/Noob/noob.png" id="2_au00k"]
 [ext_resource type="TileSet" uid="uid://bowjik744ud1v" path="res://Assets/Tilesets/Buildings.tres" id="2_iwv7r"]
-[ext_resource type="Script" uid="uid://s14x8xr8ptfl" path="res://Scenes/animationPlayer.gd" id="4_mq1bj"]
+[ext_resource type="Script" uid="uid://s14x8xr8ptfl" path="res://Scripts/Player/animationPlayer.gd" id="4_mq1bj"]
 
 [sub_resource type="GDScript" id="GDScript_707cn"]
 script/source = "extends TileMapLayer
