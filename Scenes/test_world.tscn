@@ -1,10 +1,16 @@
-[gd_scene load_steps=25 format=4 uid="uid://cuaxig4t7u0ou"]
+[gd_scene load_steps=32 format=4 uid="uid://cuaxig4t7u0ou"]
 
 [ext_resource type="TileSet" uid="uid://bpkfpoph55cxs" path="res://Assets/Tilesets/Ground.tres" id="1_skmq4"]
 [ext_resource type="Script" uid="uid://ddke4q1f5vtwk" path="res://Scripts/Player/movement.gd" id="2_707cn"]
 [ext_resource type="Texture2D" uid="uid://kwi1fodv1dd7" path="res://Assets/Characters_Images/Noob/noob.png" id="2_au00k"]
 [ext_resource type="TileSet" uid="uid://bowjik744ud1v" path="res://Assets/Tilesets/Buildings.tres" id="2_iwv7r"]
 [ext_resource type="Script" uid="uid://s14x8xr8ptfl" path="res://Scripts/Player/animationPlayer.gd" id="4_mq1bj"]
+[ext_resource type="Texture2D" uid="uid://dhode05b0nqm5" path="res://Assets/ReadyGUIResources/UpperMenu.tres" id="6_kt01x"]
+[ext_resource type="Texture2D" uid="uid://bwbj6aw1p711c" path="res://Assets/ReadyGUIResources/RightScreenBorder.tres" id="7_p7j4p"]
+[ext_resource type="Texture2D" uid="uid://cs5sht6v2u2au" path="res://Assets/ReadyGUIResources/bgdol.tres" id="8_0fcji"]
+[ext_resource type="Texture2D" uid="uid://csyrohm23mon" path="res://Assets/ReadyGUIResources/bggora.tres" id="8_dqfvb"]
+[ext_resource type="FontFile" uid="uid://cwsh2evfl732a" path="res://Assets/Fonts/arimo-v14-latin-ext_latin-regular (1).woff2" id="9_5qo1a"]
+[ext_resource type="Texture2D" uid="uid://bmlptfu04sgd7" path="res://Assets/ReadyGUIResources/Bar.tres" id="10_yrarp"]
 
 [sub_resource type="GDScript" id="GDScript_707cn"]
 script/source = "extends TileMapLayer
@@ -148,6 +154,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_707cn"]
 size = Vector2(32, 32)
 
+[sub_resource type="LabelSettings" id="LabelSettings_bgy8c"]
+line_spacing = 0.0
+font = ExtResource("9_5qo1a")
+font_color = Color(1, 1, 0.101961, 1)
+
 [node name="World" type="Node2D"]
 
 [node name="Ground" type="TileMapLayer" parent="."]
@@ -190,3 +201,124 @@ script = ExtResource("4_mq1bj")
 [node name="Collision" type="CollisionShape2D" parent="Player"]
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_707cn")
+
+[node name="Camera" type="Camera2D" parent="Player"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RightBackground" type="BoxContainer" parent="CanvasLayer"]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_top = -96.0
+offset_bottom = 96.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 0
+vertical = true
+
+[node name="BG" type="TextureRect" parent="CanvasLayer/RightBackground"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_p7j4p")
+
+[node name="BG2" type="TextureRect" parent="CanvasLayer/RightBackground"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_p7j4p")
+
+[node name="BG3" type="TextureRect" parent="CanvasLayer/RightBackground"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_p7j4p")
+
+[node name="BG4" type="TextureRect" parent="CanvasLayer/RightBackground"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_p7j4p")
+
+[node name="BG5" type="TextureRect" parent="CanvasLayer/RightBackground"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_p7j4p")
+
+[node name="BG6" type="TextureRect" parent="CanvasLayer/RightBackground"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_p7j4p")
+
+[node name="BG7" type="TextureRect" parent="CanvasLayer/RightBackground"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_p7j4p")
+
+[node name="BG8" type="TextureRect" parent="CanvasLayer/RightBackground"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_p7j4p")
+
+[node name="UpBackground" type="BoxContainer" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/UpBackground"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_dqfvb")
+
+[node name="Header" type="BoxContainer" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 64.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="UpperMenu" type="TextureRect" parent="CanvasLayer/Header"]
+layout_mode = 2
+texture = ExtResource("6_kt01x")
+
+[node name="Label" type="Label" parent="CanvasLayer/Header/UpperMenu"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 1.0
+offset_bottom = 24.0
+grow_horizontal = 2
+text = "hrabiamontecristooo7 (36m)"
+label_settings = SubResource("LabelSettings_bgy8c")
+horizontal_alignment = 1
+
+[node name="DownBackground" type="BoxContainer" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="bgdown" type="TextureRect" parent="CanvasLayer/DownBackground"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_0fcji")
+expand_mode = 2
+
+[node name="Bar" type="BoxContainer" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -80.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="BarImage" type="TextureRect" parent="CanvasLayer/Bar"]
+layout_mode = 2
+texture = ExtResource("10_yrarp")

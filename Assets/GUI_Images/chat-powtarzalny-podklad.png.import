@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j5f3s66g4t0d"
-path="res://.godot/imported/dialog_cursor.png-af580cf9d65515ef2b60cf4f43a7626c.ctex"
+uid="uid://sqnc2joohs7n"
+path="res://.godot/imported/chat-powtarzalny-podklad.png-6fc1ac7b0245cbb5e3e32a95f4d9e41b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GUI_Images/dialog_cursor.png"
-dest_files=["res://.godot/imported/dialog_cursor.png-af580cf9d65515ef2b60cf4f43a7626c.ctex"]
+source_file="res://Assets/GUI_Images/chat-powtarzalny-podklad.png"
+dest_files=["res://.godot/imported/chat-powtarzalny-podklad.png-6fc1ac7b0245cbb5e3e32a95f4d9e41b.ctex"]
 
 [params]
 

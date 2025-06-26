@@ -14,16 +14,16 @@ func _ready():
 func _process(delta):
 	if not moving:
 		var input_vector = Vector2.ZERO
-		if Input.is_action_pressed("ui_right"):
+		if Input.is_action_pressed("right"):
 			animationController.PlayAnim("WalkRight")
 			input_vector.x += 1
-		elif Input.is_action_pressed("ui_left"):
+		elif Input.is_action_pressed("left"):
 			animationController.PlayAnim("WalkLeft")
 			input_vector.x -= 1
-		elif Input.is_action_pressed("ui_up"):
+		elif Input.is_action_pressed("up"):
 			animationController.PlayAnim("WalkUp")
 			input_vector.y -= 1
-		elif Input.is_action_pressed("ui_down"):
+		elif Input.is_action_pressed("down"):
 			animationController.PlayAnim("WalkDown")
 			input_vector.y += 1
 
@@ -39,5 +39,5 @@ func _process(delta):
 			position = target
 			moving = false
 	else:
-		if not Input.is_anything_pressed():
+		if not (Input.is_action_pressed("right") or Input.is_action_pressed("left") or Input.is_action_pressed("up") or Input.is_action_pressed("down")):
 			animationController.PlayAnim("Stop")		

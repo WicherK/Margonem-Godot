@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bwbj6aw1p711c"]
+
+[ext_resource type="Texture2D" uid="uid://sqnc2joohs7n" path="res://Assets/GUI_Images/chat-powtarzalny-podklad.png" id="1_m8bg8"]
+
+[resource]
+atlas = ExtResource("1_m8bg8")
+region = Rect2(250, 0, 200, 114)

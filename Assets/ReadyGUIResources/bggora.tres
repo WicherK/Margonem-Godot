@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://csyrohm23mon"]
+
+[ext_resource type="Texture2D" uid="uid://cu1bdhgbrap7y" path="res://Assets/GUI_Images/bg-gora-dol.png" id="1_px4n6"]
+
+[resource]
+atlas = ExtResource("1_px4n6")
+region = Rect2(0, 61, 150, 59)
