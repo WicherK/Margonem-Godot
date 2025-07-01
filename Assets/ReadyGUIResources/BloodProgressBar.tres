@@ -1,0 +1,17 @@
+[gd_resource type="AnimatedTexture" load_steps=5 format=3 uid="uid://tbx7wpgl50fc"]
+
+[ext_resource type="Texture2D" uid="uid://mqf5h6hj7nnk" path="res://Assets/GUI_Images/blood1.png" id="1_xh07w"]
+[ext_resource type="Texture2D" uid="uid://ftgkjlgu3bl0" path="res://Assets/GUI_Images/blood2.png" id="2_sae07"]
+[ext_resource type="Texture2D" uid="uid://djbupp0ygg78o" path="res://Assets/GUI_Images/blood3.png" id="3_7fyu3"]
+[ext_resource type="Texture2D" uid="uid://b73nhkfgsk8j3" path="res://Assets/GUI_Images/blood4.png" id="4_7hywb"]
+
+[resource]
+frames = 4
+frame_0/texture = ExtResource("1_xh07w")
+frame_0/duration = 0.75
+frame_1/texture = ExtResource("2_sae07")
+frame_1/duration = 0.75
+frame_2/texture = ExtResource("3_7fyu3")
+frame_2/duration = 0.75
+frame_3/texture = ExtResource("4_7hywb")
+frame_3/duration = 0.75

@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5200jmvnrnkd"]
+
+[ext_resource type="Script" uid="uid://c5txuurh8jllw" path="res://Scripts/tip.gd" id="1_hymg6"]
+[ext_resource type="FontFile" uid="uid://cwsh2evfl732a" path="res://Assets/Fonts/arimo-v14-latin-ext_latin-regular (1).woff2" id="3_ms5of"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eid5o"]
+bg_color = Color(0.109804, 0.109804, 0.109804, 0.870588)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.666569, 0.666569, 0.666568, 1)
+border_blend = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_eid5o"]
+line_spacing = 0.0
+font_size = 9
+
+[sub_resource type="LabelSettings" id="LabelSettings_qkigg"]
+line_spacing = 0.0
+font = ExtResource("3_ms5of")
+font_size = 8
+font_color = Color(0.931165, 0.602083, 1.54018e-06, 1)
+shadow_size = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_nuiy5"]
+line_spacing = 0.0
+font = ExtResource("3_ms5of")
+font_size = 8
+font_color = Color(0.473975, 0.473976, 0.473976, 1)
+
+[node name="Tip" type="Panel"]
+offset_left = 21.0
+offset_top = -8.0
+offset_right = 142.0
+offset_bottom = 30.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_eid5o")
+script = ExtResource("1_hymg6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -6
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+text = "PRZECIWNIK"
+label_settings = SubResource("LabelSettings_eid5o")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "elita II"
+label_settings = SubResource("LabelSettings_qkigg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+text = "X lvl"
+label_settings = SubResource("LabelSettings_nuiy5")
+horizontal_alignment = 1
