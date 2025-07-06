@@ -13,6 +13,10 @@ enum DAMAGE_TYPE { PHYSICAL, MAGIC }
 
 @export var animation: AnimatedSprite2D
 
+# Cooldown mechanic
+var round_cooldown = 0
+var round_passed = 0
+
 func visual_attack() -> void:
 	if animation != null:
 		animation.play()
