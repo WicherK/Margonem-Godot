@@ -31,6 +31,8 @@ var dialog_cursor := preload("res://Assets/ReadyGUIResources/dialog_cursor.png")
 
 # Tooltip prefab
 var tooltip_prefab := preload("res://Prefabs/tip_prefab.tscn")
+var abovetip_prefab := preload("res://Prefabs/abovetip_prefab.tscn")
+var abovetip_instance: AboveTip = null
 var tooltip_instance: Tip = null
 
 signal hovered(character: ICharacter)
@@ -39,7 +41,15 @@ signal unhovered()
 func _ready():
 	connect("mouse_entered", _on_mouse_entered)
 	connect("mouse_exited", _on_mouse_exited)
-
+	
+	if character_type == CHARACTER_TYPE.ENEMY:
+		abovetip_instance = abovetip_prefab.instantiate()
+		abovetip_instance.name_text = character_name + '\n' + "(" + str(level) + "w)"
+		abovetip_instance.parent = get_node(".")
+		
+		var ui_layer = get_tree().get_current_scene().get_node("CanvasLayer")
+		ui_layer.add_child(abovetip_instance)
+		
 func apply_damage(damage_value: int, damage_type: ISkill.DAMAGE_TYPE) -> void:
 	pass
 	

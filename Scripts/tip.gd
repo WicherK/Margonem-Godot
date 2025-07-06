@@ -18,5 +18,9 @@ func _process(delta: float) -> void:
 		boss_status_label.visible = false;
 		container.add_theme_constant_override("separation", -1)
 		
+	if level_text == "":
+		level_label.visible = false;
+		container.add_theme_constant_override("separation", 0)
+		
 	boss_status_label.text = boss_status_text
 	level_label.text = level_text

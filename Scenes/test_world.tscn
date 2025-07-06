@@ -1,22 +1,21 @@
-[gd_scene load_steps=53 format=4 uid="uid://cuaxig4t7u0ou"]
+[gd_scene load_steps=52 format=4 uid="uid://cuaxig4t7u0ou"]
 
 [ext_resource type="TileSet" uid="uid://bpkfpoph55cxs" path="res://Assets/Tilesets/Ground.tres" id="1_skmq4"]
 [ext_resource type="Script" uid="uid://ddke4q1f5vtwk" path="res://Scripts/Player/movement.gd" id="2_707cn"]
 [ext_resource type="Texture2D" uid="uid://kwi1fodv1dd7" path="res://Assets/Characters_Images/Noob/noob.png" id="2_au00k"]
 [ext_resource type="TileSet" uid="uid://bowjik744ud1v" path="res://Assets/Tilesets/Buildings.tres" id="2_iwv7r"]
 [ext_resource type="Script" uid="uid://s14x8xr8ptfl" path="res://Scripts/Player/animationPlayer.gd" id="4_mq1bj"]
+[ext_resource type="Script" uid="uid://cpthn8l12n5ft" path="res://Scripts/ICharacter.gd" id="4_nuiy5"]
 [ext_resource type="Texture2D" uid="uid://dhode05b0nqm5" path="res://Assets/ReadyGUIResources/UpperMenu.tres" id="6_kt01x"]
 [ext_resource type="Texture2D" uid="uid://bwbj6aw1p711c" path="res://Assets/ReadyGUIResources/RightScreenBorder.tres" id="7_p7j4p"]
 [ext_resource type="Texture2D" uid="uid://cs5sht6v2u2au" path="res://Assets/ReadyGUIResources/bgdol.tres" id="8_0fcji"]
 [ext_resource type="Texture2D" uid="uid://csyrohm23mon" path="res://Assets/ReadyGUIResources/bggora.tres" id="8_dqfvb"]
-[ext_resource type="FontFile" uid="uid://cwsh2evfl732a" path="res://Assets/Fonts/arimo-v14-latin-ext_latin-regular (1).woff2" id="9_5qo1a"]
 [ext_resource type="Texture2D" uid="uid://bmlptfu04sgd7" path="res://Assets/ReadyGUIResources/Bar.tres" id="10_yrarp"]
 [ext_resource type="Texture2D" uid="uid://tbx7wpgl50fc" path="res://Assets/ReadyGUIResources/BloodProgressBar.tres" id="12_dftws"]
 [ext_resource type="Texture2D" uid="uid://nffg1g0wtxij" path="res://Assets/ReadyGUIResources/OverProgressBar.tres" id="13_h2i6u"]
 [ext_resource type="Texture2D" uid="uid://dj85qviphx0hc" path="res://Assets/AdditionalsNotSortedYet/oneItemSlotToRepeat.png" id="14_h2i6u"]
 [ext_resource type="Texture2D" uid="uid://l8dji3qrxt4l" path="res://Assets/AdditionalsNotSortedYet/b88ded9f-e3e8-4ffd-96a2-c734257a81b2.png" id="15_6sxhy"]
 [ext_resource type="Texture2D" uid="uid://bn7q13cdrfe7v" path="res://Assets/AdditionalsNotSortedYet/width-card-button.png" id="16_bv2ho"]
-[ext_resource type="FontFile" uid="uid://ctmoahh612mq0" path="res://Assets/Fonts/arimo-v14-latin-ext_latin-700 (1).woff2" id="17_bv2ho"]
 [ext_resource type="Texture2D" uid="uid://bbngie47q30fh" path="res://Assets/Enemy_Images/pancernik.png" id="18_byarb"]
 [ext_resource type="Script" uid="uid://idxrau7wkbv" path="res://Scripts/Enemies/pancernik.gd" id="18_eid5o"]
 
@@ -164,7 +163,6 @@ animations = [{
 
 [sub_resource type="LabelSettings" id="LabelSettings_bgy8c"]
 line_spacing = 0.0
-font = ExtResource("9_5qo1a")
 font_color = Color(1, 1, 0.101961, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nuiy5"]
@@ -212,7 +210,6 @@ atlas = ExtResource("15_6sxhy")
 region = Rect2(432, 369, 23, 27)
 
 [sub_resource type="LabelSettings" id="LabelSettings_byarb"]
-font = ExtResource("17_bv2ho")
 font_size = 26
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eid5o"]
@@ -259,6 +256,10 @@ script = ExtResource("2_707cn")
 map_position = Vector2(-14, -7)
 
 [node name="Character" type="Area2D" parent="Player"]
+script = ExtResource("4_nuiy5")
+character_name = "pontczek"
+character_type = 1
+level = 36
 
 [node name="Collision" type="CollisionShape2D" parent="Player/Character"]
 position = Vector2(0, 8)
@@ -936,7 +937,7 @@ position = Vector2(-208, -248)
 script = ExtResource("18_eid5o")
 character_name = "Pancernik"
 character_type = 2
-level = 1
+level = 15
 health = 100
 mana = 100
 stats = {

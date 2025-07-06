@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://c5200jmvnrnkd"]
+[gd_scene load_steps=6 format=3 uid="uid://c5200jmvnrnkd"]
 
 [ext_resource type="Script" uid="uid://c5txuurh8jllw" path="res://Scripts/tip.gd" id="1_hymg6"]
-[ext_resource type="FontFile" uid="uid://cwsh2evfl732a" path="res://Assets/Fonts/arimo-v14-latin-ext_latin-regular (1).woff2" id="3_ms5of"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eid5o"]
 bg_color = Color(0.109804, 0.109804, 0.109804, 0.870588)
@@ -18,20 +17,18 @@ font_size = 9
 
 [sub_resource type="LabelSettings" id="LabelSettings_qkigg"]
 line_spacing = 0.0
-font = ExtResource("3_ms5of")
 font_size = 8
 font_color = Color(0.931165, 0.602083, 1.54018e-06, 1)
 shadow_size = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_nuiy5"]
 line_spacing = 0.0
-font = ExtResource("3_ms5of")
 font_size = 8
 font_color = Color(0.473975, 0.473976, 0.473976, 1)
 
 [node name="Tip" type="Panel"]
 offset_left = 21.0
-offset_top = -8.0
+offset_top = -9.0
 offset_right = 142.0
 offset_bottom = 30.0
 size_flags_horizontal = 4
@@ -50,16 +47,14 @@ theme_override_constants/separation = -6
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 3
+size_flags_vertical = 10
 text = "PRZECIWNIK"
 label_settings = SubResource("LabelSettings_eid5o")
 horizontal_alignment = 1
-vertical_alignment = 2
+vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 6
 text = "elita II"
 label_settings = SubResource("LabelSettings_qkigg")
@@ -68,8 +63,8 @@ vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 2
+size_flags_vertical = 6
 text = "X lvl"
 label_settings = SubResource("LabelSettings_nuiy5")
 horizontal_alignment = 1
+vertical_alignment = 1
