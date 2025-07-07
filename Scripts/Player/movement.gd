@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var tilemap = $"../Ground"
+@onready var tilemap = $"../World/Ground"
 @onready var animationController = $BodySkin
 
 @export var map_position = Vector2(0, 0)
@@ -8,10 +8,16 @@ extends CharacterBody2D
 
 var moving = false
 
+func _enter_tree() -> void:
+	set_multiplayer_authority(name.to_int())
+
 func _ready():
-	position = tilemap.map_to_local(map_position)
+	if tilemap:
+		position = tilemap.map_to_local(map_position)
 
 func _process(delta):
+	if not is_multiplayer_authority(): return
+		
 	if not moving:
 		var input_vector = Vector2.ZERO
 		if Input.is_action_pressed("right"):

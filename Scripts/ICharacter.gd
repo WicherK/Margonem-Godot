@@ -1,89 +1,43 @@
 extends Area2D
 class_name ICharacter
 
-enum CHARACTER_TYPE { NPC, PLAYER, ENEMY }
-
-@export var character_name: String
+enum CHARACTER_TYPE {PLAYER, NPC, ENEMY}
 
 @export var character_type: CHARACTER_TYPE
+@export var character_name: String
 @export var boss_status: String
-@export var level: int
-@export var exp_min: int
-@export var exp_max: int
-@export var health: int
-@export var mana: int
+@export var level: String
+@export var actual_exp: String
+@export var max_exp: String
 
-@export var skills: Array[ISkill] = []
+var above_tip = preload("res://Prefabs/hover_tip.tscn")
+var hover_tip = preload("res://Prefabs/hover_tip.tscn")
 
-@export var stats = {
-	"attack_speed": 0,
-	"base_attack": 0,
-	"magic_attack": 0,
-	"armor": 0,
-	"magic_armor": 0,
-}
+var above_tip_instance
+var hover_tip_instance
 
-# Cursors
-var normal_cursor := preload("res://Assets/ReadyGUIResources/cursor.png")
-var attack_cursor := preload("res://Assets/ReadyGUIResources/attack_cursor.png")
-var use_cursor := preload("res://Assets/ReadyGUIResources/cursor.png")
-var dialog_cursor := preload("res://Assets/ReadyGUIResources/dialog_cursor.png")
-
-# Tooltip prefab
-var tooltip_prefab := preload("res://Prefabs/tip_prefab.tscn")
-var abovetip_prefab := preload("res://Prefabs/abovetip_prefab.tscn")
-var abovetip_instance: AboveTip = null
-var tooltip_instance: Tip = null
-
-signal hovered(character: ICharacter)
-signal unhovered()
-
-func _ready():
-	connect("mouse_entered", _on_mouse_entered)
-	connect("mouse_exited", _on_mouse_exited)
-	
-	if character_type == CHARACTER_TYPE.ENEMY:
-		abovetip_instance = abovetip_prefab.instantiate()
-		abovetip_instance.name_text = character_name + '\n' + "(" + str(level) + "w)"
-		abovetip_instance.parent = get_node(".")
+func _ready() -> void:
+	if character_type == CHARACTER_TYPE.PLAYER:
+		character_name = get_parent().name
 		
-		var ui_layer = get_tree().get_current_scene().get_node("CanvasLayer")
-		ui_layer.add_child(abovetip_instance)
-		
-func apply_damage(damage_value: int, damage_type: ISkill.DAMAGE_TYPE) -> void:
-	pass
+	connect("mouse_entered", mouse_on_character)
+	connect("mouse_exited", mouse_leave_character)
 	
-func _on_mouse_entered():
-	if tooltip_instance == null:
-		tooltip_instance = tooltip_prefab.instantiate()
-		
-		if character_type == CHARACTER_TYPE.ENEMY:
-			tooltip_instance.name_text = character_name
-			tooltip_instance.boss_status_text = boss_status
-			tooltip_instance.level_text = str(level) + " lvl"
-			Input.set_custom_mouse_cursor(attack_cursor)	
-		elif character_type == CHARACTER_TYPE.NPC:
-			tooltip_instance.name_text = character_name
-			tooltip_instance.level_text = ""
-			Input.set_custom_mouse_cursor(dialog_cursor)
-		elif character_type == CHARACTER_TYPE.PLAYER:
-			tooltip_instance.name_text = character_name
-			tooltip_instance.level_text = ""
-			Input.set_custom_mouse_cursor(use_cursor)
-			
-		var ui_layer = get_tree().get_current_scene().get_node("CanvasLayer")
-		ui_layer.add_child(tooltip_instance)
-	tooltip_instance.show()
-	set_process(true)
-
-func _on_mouse_exited():
-	if tooltip_instance:
-		tooltip_instance.queue_free()
-		tooltip_instance = null
-	set_process(false)
+func mouse_on_character() -> void:
+	# Spawn tip with short info about character
+	hover_tip_instance = hover_tip.instantiate()
+	# Fill info in tip
+	hover_tip_instance.character_name = character_name
+	hover_tip_instance.boss_status = boss_status
+	hover_tip_instance.level = level
+	# Add it to the scene
+	get_parent().add_child(hover_tip_instance)
 	
-	Input.set_custom_mouse_cursor(normal_cursor)
-
-func _process(delta):
-	if tooltip_instance:
-		tooltip_instance.position = get_viewport().get_mouse_position() + Vector2(30, 0)
+func mouse_leave_character() -> void:
+	# Delete tip
+	hover_tip_instance.queue_free()
+	
+func _process(delta: float) -> void:
+	# Update position of the tip when mouse is on character
+	if hover_tip_instance:
+		hover_tip_instance.global_position = get_global_mouse_position() + Vector2(30, 0)

@@ -1,0 +1,759 @@
+[gd_scene load_steps=26 format=3 uid="uid://cuaxig4t7u0ou"]
+
+[ext_resource type="Script" uid="uid://cxblogfl7igxk" path="res://Scripts/MultiplayerController.gd" id="1_2gjwo"]
+[ext_resource type="Texture2D" uid="uid://bwbj6aw1p711c" path="res://Assets/ReadyGUIResources/RightScreenBorder.tres" id="7_3rnu4"]
+[ext_resource type="Texture2D" uid="uid://csyrohm23mon" path="res://Assets/ReadyGUIResources/bggora.tres" id="8_d6oel"]
+[ext_resource type="Texture2D" uid="uid://dhode05b0nqm5" path="res://Assets/ReadyGUIResources/UpperMenu.tres" id="9_gpcsf"]
+[ext_resource type="Texture2D" uid="uid://cs5sht6v2u2au" path="res://Assets/ReadyGUIResources/bgdol.tres" id="10_18nqb"]
+[ext_resource type="Texture2D" uid="uid://bmlptfu04sgd7" path="res://Assets/ReadyGUIResources/Bar.tres" id="11_kmpdd"]
+[ext_resource type="Texture2D" uid="uid://tbx7wpgl50fc" path="res://Assets/ReadyGUIResources/BloodProgressBar.tres" id="12_64mou"]
+[ext_resource type="Texture2D" uid="uid://nffg1g0wtxij" path="res://Assets/ReadyGUIResources/OverProgressBar.tres" id="13_scb1i"]
+[ext_resource type="Texture2D" uid="uid://dj85qviphx0hc" path="res://Assets/AdditionalsNotSortedYet/oneItemSlotToRepeat.png" id="14_eyylg"]
+[ext_resource type="Texture2D" uid="uid://l8dji3qrxt4l" path="res://Assets/AdditionalsNotSortedYet/b88ded9f-e3e8-4ffd-96a2-c734257a81b2.png" id="15_q5fa1"]
+[ext_resource type="Texture2D" uid="uid://bn7q13cdrfe7v" path="res://Assets/AdditionalsNotSortedYet/width-card-button.png" id="16_x08h1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bgy8c"]
+line_spacing = 0.0
+font_color = Color(1, 1, 0.101961, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuiy5"]
+atlas = ExtResource("14_eyylg")
+region = Rect2(0, 0, 33, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_612sw"]
+atlas = ExtResource("15_q5fa1")
+region = Rect2(266, 1033, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbvpn"]
+atlas = ExtResource("15_q5fa1")
+region = Rect2(390, 1033, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fufx5"]
+atlas = ExtResource("15_q5fa1")
+region = Rect2(328, 1033, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iskq8"]
+atlas = ExtResource("15_q5fa1")
+region = Rect2(359, 1033, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqlq6"]
+atlas = ExtResource("15_q5fa1")
+region = Rect2(266, 1064, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wb81l"]
+atlas = ExtResource("15_q5fa1")
+region = Rect2(297, 1033, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lt8tx"]
+atlas = ExtResource("15_q5fa1")
+region = Rect2(297, 1064, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edt1c"]
+atlas = ExtResource("15_q5fa1")
+region = Rect2(359, 1064, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5u6sv"]
+atlas = ExtResource("15_q5fa1")
+region = Rect2(328, 1064, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hoxad"]
+atlas = ExtResource("15_q5fa1")
+region = Rect2(432, 369, 23, 27)
+
+[sub_resource type="LabelSettings" id="LabelSettings_byarb"]
+font_size = 26
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eid5o"]
+bg_color = Color(0.172833, 0.172833, 0.172833, 1)
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_2gjwo")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RightBackground" type="BoxContainer" parent="CanvasLayer"]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -250.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 0
+vertical = true
+
+[node name="BG" type="TextureRect" parent="CanvasLayer/RightBackground"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_3rnu4")
+
+[node name="BG2" type="TextureRect" parent="CanvasLayer/RightBackground"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_3rnu4")
+
+[node name="BG3" type="TextureRect" parent="CanvasLayer/RightBackground"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_3rnu4")
+
+[node name="BG4" type="TextureRect" parent="CanvasLayer/RightBackground"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_3rnu4")
+
+[node name="BG5" type="TextureRect" parent="CanvasLayer/RightBackground"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_3rnu4")
+
+[node name="BG6" type="TextureRect" parent="CanvasLayer/RightBackground"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_3rnu4")
+
+[node name="BG7" type="TextureRect" parent="CanvasLayer/RightBackground"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_3rnu4")
+
+[node name="BG8" type="TextureRect" parent="CanvasLayer/RightBackground"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_3rnu4")
+
+[node name="UpBackground" type="BoxContainer" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 59.0
+grow_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/UpBackground"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_d6oel")
+
+[node name="Header" type="BoxContainer" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 5.0
+offset_right = 5.0
+offset_bottom = 64.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="UpperMenu" type="TextureRect" parent="CanvasLayer/Header"]
+layout_mode = 2
+texture = ExtResource("9_gpcsf")
+
+[node name="Label" type="Label" parent="CanvasLayer/Header/UpperMenu"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 1.0
+offset_bottom = 24.0
+grow_horizontal = 2
+text = "hrabiamontecristooo7 (36m)"
+label_settings = SubResource("LabelSettings_bgy8c")
+horizontal_alignment = 1
+
+[node name="DownBackground" type="BoxContainer" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -60.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+
+[node name="bgdown" type="TextureRect" parent="CanvasLayer/DownBackground"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("10_18nqb")
+expand_mode = 2
+
+[node name="DownContainer" type="BoxContainer" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="BarImage" type="TextureRect" parent="CanvasLayer/DownContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("11_kmpdd")
+stretch_mode = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/DownContainer/BarImage"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -58.5
+offset_top = -84.0
+offset_right = 197.5
+offset_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.45, 0.45)
+size_flags_vertical = 8
+value = 100.0
+texture_progress = ExtResource("12_64mou")
+
+[node name="OverlayProgressBar" type="TextureRect" parent="CanvasLayer/DownContainer/BarImage"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -53.5
+offset_top = -79.0
+offset_right = 48.5
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.045, 1.045)
+texture = ExtResource("13_scb1i")
+
+[node name="ArmorSlots" type="GridContainer" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -231.0
+offset_top = 92.0
+offset_right = -124.0
+offset_bottom = 236.0
+grow_horizontal = 0
+scale = Vector2(1.01, 1.01)
+theme_override_constants/h_separation = -1
+theme_override_constants/v_separation = -1
+columns = 3
+
+[node name="ItemFrame" type="TextureRect" parent="CanvasLayer/ArmorSlots"]
+texture_filter = 1
+layout_mode = 2
+
+[node name="ItemFrame2" type="TextureRect" parent="CanvasLayer/ArmorSlots"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="HeadIcon" type="TextureRect" parent="CanvasLayer/ArmorSlots/ItemFrame2"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_612sw")
+expand_mode = 1
+
+[node name="ItemFrame3" type="TextureRect" parent="CanvasLayer/ArmorSlots"]
+texture_filter = 1
+layout_mode = 2
+
+[node name="ItemFrame4" type="TextureRect" parent="CanvasLayer/ArmorSlots"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="RingIcon" type="TextureRect" parent="CanvasLayer/ArmorSlots/ItemFrame4"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_cbvpn")
+
+[node name="ItemFrame5" type="TextureRect" parent="CanvasLayer/ArmorSlots"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="NecklaceIcon" type="TextureRect" parent="CanvasLayer/ArmorSlots/ItemFrame5"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_fufx5")
+stretch_mode = 2
+
+[node name="ItemFrame6" type="TextureRect" parent="CanvasLayer/ArmorSlots"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="HandsIcon" type="TextureRect" parent="CanvasLayer/ArmorSlots/ItemFrame6"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_iskq8")
+stretch_mode = 2
+
+[node name="ItemFrame7" type="TextureRect" parent="CanvasLayer/ArmorSlots"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="HandIcon" type="TextureRect" parent="CanvasLayer/ArmorSlots/ItemFrame7"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_dqlq6")
+
+[node name="ItemFrame8" type="TextureRect" parent="CanvasLayer/ArmorSlots"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ArmorIcon" type="TextureRect" parent="CanvasLayer/ArmorSlots/ItemFrame8"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_wb81l")
+stretch_mode = 2
+
+[node name="ItemFrame9" type="TextureRect" parent="CanvasLayer/ArmorSlots"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="HandIcon" type="TextureRect" parent="CanvasLayer/ArmorSlots/ItemFrame9"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_lt8tx")
+
+[node name="ItemFrame10" type="TextureRect" parent="CanvasLayer/ArmorSlots"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="CoinBagIcon" type="TextureRect" parent="CanvasLayer/ArmorSlots/ItemFrame10"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_edt1c")
+stretch_mode = 2
+
+[node name="ItemFrame11" type="TextureRect" parent="CanvasLayer/ArmorSlots"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="Armor" type="TextureRect" parent="CanvasLayer/ArmorSlots/ItemFrame11"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_5u6sv")
+stretch_mode = 2
+
+[node name="ItemFrame12" type="TextureRect" parent="CanvasLayer/ArmorSlots"]
+texture_filter = 1
+layout_mode = 2
+
+[node name="PVPStatus" type="TextureRect" parent="CanvasLayer/ArmorSlots/ItemFrame12"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.5
+offset_top = -13.5
+offset_right = 11.5
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_hoxad")
+stretch_mode = 2
+
+[node name="Stats" type="ColorRect" parent="CanvasLayer"]
+z_index = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -127.0
+offset_top = 99.0
+offset_right = -28.9999
+offset_bottom = 202.0
+grow_horizontal = 0
+scale = Vector2(1.23999, 1.23999)
+color = Color(0.156863, 0.160784, 0.160784, 1)
+
+[node name="HeaderImage" type="TextureRect" parent="CanvasLayer/Stats"]
+z_index = 2
+layout_mode = 0
+offset_left = -1.0
+offset_top = -7.0
+offset_right = 299.0
+offset_bottom = 28.0
+scale = Vector2(0.335, 0.335)
+texture = ExtResource("16_x08h1")
+
+[node name="Label" type="Label" parent="CanvasLayer/Stats/HeaderImage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "STATYSTYKI"
+label_settings = SubResource("LabelSettings_byarb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Inventory" type="GridContainer" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -229.0
+offset_top = 321.0
+offset_right = -4.00012
+offset_bottom = 514.0
+grow_horizontal = 0
+scale = Vector2(0.97, 0.97)
+theme_override_constants/h_separation = -1
+theme_override_constants/v_separation = -1
+columns = 7
+
+[node name="ItemFrame" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("14_eyylg")
+
+[node name="ItemFrame2" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame3" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("14_eyylg")
+
+[node name="ItemFrame4" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame5" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame6" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame7" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame8" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame9" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame10" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame11" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame12" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame13" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame14" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame15" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame16" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame17" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame18" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame19" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame20" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame21" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame22" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame23" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame24" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame25" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame26" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame27" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame28" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame29" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame30" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame31" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame32" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame33" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame34" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame35" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame36" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame37" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame38" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame39" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame40" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame41" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="ItemFrame42" type="TextureRect" parent="CanvasLayer/Inventory"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_nuiy5")
+
+[node name="Menu" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="Menu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eid5o")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 522.0
+offset_right = -516.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Host" type="Button" parent="Menu/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Host"
+
+[node name="Join" type="Button" parent="Menu/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Join"
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("uid://b4tte1ft2ebu5")
+spawn_path = NodePath("..")
+
+[connection signal="pressed" from="Menu/Panel/VBoxContainer/Host" to="." method="create_server"]
+[connection signal="pressed" from="Menu/Panel/VBoxContainer/Join" to="." method="join_server"]
