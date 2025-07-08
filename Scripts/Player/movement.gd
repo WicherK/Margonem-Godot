@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
 @onready var tilemap = $"../World/Ground"
-@onready var animationController = $BodySkin
+@onready var animationControllerUp = $TorsoUp
+@onready var animationControllerDown = $TorsoDown
+@onready var camera = $Camera
 
 @export var map_position = Vector2(0, 0)
 @export var move_speed = 125
@@ -12,6 +14,9 @@ func _enter_tree() -> void:
 	set_multiplayer_authority(name.to_int())
 
 func _ready():
+	if not is_multiplayer_authority():
+		camera.queue_free()
+		
 	if tilemap:
 		position = tilemap.map_to_local(map_position)
 
@@ -21,16 +26,20 @@ func _process(delta):
 	if not moving:
 		var input_vector = Vector2.ZERO
 		if Input.is_action_pressed("right"):
-			animationController.PlayAnim("WalkRight")
+			animationControllerUp.PlayAnim("WalkRight")
+			animationControllerDown.PlayAnim("WalkRight")
 			input_vector.x += 1
 		elif Input.is_action_pressed("left"):
-			animationController.PlayAnim("WalkLeft")
+			animationControllerUp.PlayAnim("WalkLeft")
+			animationControllerDown.PlayAnim("WalkLeft")
 			input_vector.x -= 1
 		elif Input.is_action_pressed("up"):
-			animationController.PlayAnim("WalkUp")
+			animationControllerUp.PlayAnim("WalkUp")
+			animationControllerDown.PlayAnim("WalkUp")
 			input_vector.y -= 1
 		elif Input.is_action_pressed("down"):
-			animationController.PlayAnim("WalkDown")
+			animationControllerUp.PlayAnim("WalkDown")
+			animationControllerDown.PlayAnim("WalkDown")
 			input_vector.y += 1
 
 		if input_vector != Vector2.ZERO:
@@ -46,4 +55,5 @@ func _process(delta):
 			moving = false
 	else:
 		if not (Input.is_action_pressed("right") or Input.is_action_pressed("left") or Input.is_action_pressed("up") or Input.is_action_pressed("down")):
-			animationController.PlayAnim("Stop")		
+			animationControllerUp.PlayAnim("Stop")	
+			animationControllerDown.PlayAnim("Stop")	

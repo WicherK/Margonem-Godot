@@ -4,6 +4,7 @@ var peer = ENetMultiplayerPeer.new()
 
 var world = preload("res://Scenes/world.tscn")
 var player_prefab = preload("res://Prefabs/player_prefab.tscn")
+var server_player_prefab = preload("res://Prefabs/server_player.tscn")
 
 func create_server() -> void:
 	print("Creating server...")
@@ -18,9 +19,10 @@ func create_server() -> void:
 	add_child(world_instance)
 	
 	# Spawn player for host
-	spawn_player(multiplayer.get_unique_id())
+	spawn_server_player(multiplayer.get_unique_id())
 	
 	$Menu.hide()
+	$CanvasLayer.hide()
 	
 func join_server() -> void:
 	peer.create_client("localhost", 25565)
@@ -34,5 +36,10 @@ func join_server() -> void:
 	
 func spawn_player(id) -> void:
 	var player_instance = player_prefab.instantiate()
+	player_instance.name = str(id)
+	add_child(player_instance)
+	
+func spawn_server_player(id) -> void:
+	var player_instance = server_player_prefab.instantiate()
 	player_instance.name = str(id)
 	add_child(player_instance)
