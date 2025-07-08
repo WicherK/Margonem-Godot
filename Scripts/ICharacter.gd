@@ -72,6 +72,7 @@ var ray_length = 10000
 
 func shoot_ray() -> void:
 	if is_multiplayer_authority():
+		# Settings position and direction of shot
 		var start_pos = global_position
 		var mouse_pos = get_global_mouse_position()
 		var direction = (mouse_pos - start_pos).normalized()
@@ -85,6 +86,7 @@ func shoot_ray() -> void:
 		query.collision_mask = 2
 		query.exclude = [self]
 		
+		# Result of our shot
 		var result = space_state.intersect_ray(query)
 
 		if result:

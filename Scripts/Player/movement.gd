@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var tilemap = $"../World/Ground"
+@onready var tilemap_solid_list = [$"../World/SOLID/Grass", $"../World/SOLID/Buildings", $"../World/SOLID/Additionals"]
 @onready var animationControllerUp = $TorsoUp
 @onready var animationControllerDown = $TorsoDown
 @onready var camera = $Camera
@@ -13,7 +14,7 @@ var moving = false
 func _enter_tree() -> void:
 	set_multiplayer_authority(name.to_int())
 
-func _ready():
+func _ready():			
 	if not is_multiplayer_authority():
 		camera.queue_free()
 		
@@ -43,8 +44,10 @@ func _process(delta):
 			input_vector.y += 1
 
 		if input_vector != Vector2.ZERO:
-			map_position += input_vector
-			moving = true
+			var next_tile = map_position + input_vector
+			if not is_tile_solid(next_tile):
+				map_position = next_tile
+				moving = true
 
 	# Keep moving this destination, till then dont allow any moves (drift solution)
 	if moving:
@@ -57,3 +60,15 @@ func _process(delta):
 		if not (Input.is_action_pressed("right") or Input.is_action_pressed("left") or Input.is_action_pressed("up") or Input.is_action_pressed("down")):
 			animationControllerUp.PlayAnim("Stop")	
 			animationControllerDown.PlayAnim("Stop")	
+			
+func is_tile_solid(tile_coords: Vector2i) -> bool:
+	for tilemap_solid in tilemap_solid_list:
+		var data = tilemap_solid.get_cell_tile_data(tile_coords)
+		
+		if data:
+			if data.has_custom_data("solid"):
+				print(data.get_custom_data("solid"))
+				if data.get_custom_data("solid") == true:
+					return true
+			
+	return false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://b4tte1ft2ebu5"]
+[gd_scene load_steps=41 format=3 uid="uid://b4tte1ft2ebu5"]
 
 [ext_resource type="Script" uid="uid://ddke4q1f5vtwk" path="res://Scripts/Player/movement.gd" id="1_43apt"]
 [ext_resource type="Texture2D" uid="uid://kwi1fodv1dd7" path="res://Assets/Characters_Images/Noob/noob.png" id="3_bxtkw"]
@@ -281,9 +281,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_707cn"]
-size = Vector2(25, 21)
-
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_43apt"]
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
@@ -340,10 +337,6 @@ sprite_frames = SubResource("SpriteFrames_lgjis")
 animation = &"WalkDown"
 autoplay = "WalkDown"
 script = ExtResource("4_07dq4")
-
-[node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 10.5)
-shape = SubResource("RectangleShape2D_707cn")
 
 [node name="Camera" type="Camera2D" parent="."]
 
