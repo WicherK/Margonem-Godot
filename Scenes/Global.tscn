@@ -66,7 +66,7 @@ font_size = 26
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eid5o"]
 bg_color = Color(0.172833, 0.172833, 0.172833, 1)
 
-[node name="Game" type="Node2D"]
+[node name="Server" type="Node"]
 script = ExtResource("1_2gjwo")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

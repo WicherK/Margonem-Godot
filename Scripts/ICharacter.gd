@@ -23,8 +23,6 @@ var hover_tip = preload("res://Prefabs/hover_tip.tscn")
 var above_tip_instance
 var hover_tip_instance
 
-@onready var ray : RayCast2D = $RayCast2D 
-
 func _ready() -> void:
 	if character_type == CHARACTER_TYPE.PLAYER:
 		set_multiplayer_authority(get_parent().name.to_int())
@@ -90,6 +88,8 @@ func shoot_ray() -> void:
 		var result = space_state.intersect_ray(query)
 
 		if result:
-			print("Hit:", result.collider.name)
+			if result.collider.name == "Character":
+				# Start battle
+				pass
 		else:
 			print("Ray missed.")

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-@onready var tilemap = $"../World/Ground"
-@onready var tilemap_solid_list = [$"../World/SOLID/Grass", $"../World/SOLID/Buildings", $"../World/SOLID/Additionals"]
+@onready var tilemap = $"../World/Ground" # Main tilemap with basic GROUND
+var tilemap_solid_list = [] # Array for tilemaps that can have tiles marked as SOLID
 @onready var animationControllerUp = $TorsoUp
 @onready var animationControllerDown = $TorsoDown
 @onready var camera = $Camera
@@ -15,8 +15,15 @@ func _enter_tree() -> void:
 	set_multiplayer_authority(name.to_int())
 
 func _ready():			
+	# Delete camera if you are not the owner of this player
 	if not is_multiplayer_authority():
 		camera.queue_free()
+	
+	# Load tilemap layers that can have SOLID tiles
+	var solid_root = get_node("../World/SOLID")
+	for child in solid_root.get_children():
+		if child is TileMapLayer:
+			tilemap_solid_list.append(child)
 		
 	if tilemap:
 		position = tilemap.map_to_local(map_position)

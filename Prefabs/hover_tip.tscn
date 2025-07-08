@@ -23,6 +23,7 @@ font_size = 6
 font_color = Color(0.556953, 0.556953, 0.556953, 1)
 
 [node name="Hover_Tip" type="Panel"]
+z_index = 10
 offset_left = 21.0
 offset_top = 1.0
 offset_right = 155.0
